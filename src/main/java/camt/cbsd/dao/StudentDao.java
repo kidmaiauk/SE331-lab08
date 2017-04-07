@@ -9,7 +9,10 @@ import java.util.List;
  */
 public interface StudentDao {
     List<Student> getStudents();
+
     Student findById(long id);
+
     Student addStudent(Student student);
+
     Integer size();
 }

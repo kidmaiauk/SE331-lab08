@@ -20,7 +20,6 @@ import java.nio.file.Paths;
 import java.util.List;
 
 
-
 @Service
 @ConfigurationProperties(prefix = "server")
 public class StudentServiceImpl implements StudentService {
@@ -34,7 +33,7 @@ public class StudentServiceImpl implements StudentService {
         this.imageServerDir = imageServerDir;
     }
 
-    public List<Student> getStudents(){
+    public List<Student> getStudents() {
 
         return studentDao.getStudents();
     }
@@ -52,11 +51,10 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Student addStudent(Student student, String imageFileName, BufferedImage image) throws IOException {
         // save file to the server
-        int newId = studentDao.size()+1;
-        String newFilename = newId +"."+ imageFileName;
-        File targetFile = Files.createFile(Paths.get(imageServerDir+newFilename)).toFile();
-        ImageIO.write(image,FilenameUtils.getExtension(imageFileName),targetFile);
-
+        int newId = studentDao.size() + 1;
+        String newFilename = newId + "." + imageFileName;
+        File targetFile = Files.createFile(Paths.get(imageServerDir + newFilename)).toFile();
+        ImageIO.write(image, FilenameUtils.getExtension(imageFileName), targetFile);
         student.setImage(newFilename);
         studentDao.addStudent(student);
         return student;

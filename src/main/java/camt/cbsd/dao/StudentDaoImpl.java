@@ -23,8 +23,8 @@ public class StudentDaoImpl extends AbstractStudentDao {
         imageBaseUrl = baseUrl + imageUrl;;
        students = new ArrayList<>();
 
-        Student student = new Student(1,"SE-001","Mitsuha","Miyamizu",
-                2.15,imageBaseUrl+"mitsuha.gif",true,0,
+        Student student = new Student(1, "SE-001", "Mitsuha", "Miyamizu",
+                2.15, imageBaseUrl + "mitsuha.gif", true, 0,
                 "The most beloved one");
         students.add(student);
         student = new Student(2,"SE-002","Prayuth","The minister",
